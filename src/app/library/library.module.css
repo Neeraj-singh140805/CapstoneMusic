@@ -1,109 +1,150 @@
-/* src/app/library/Library.module.css */
-
 .container {
-    padding: 30px;
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center the content horizontally */
-  }
-  
-  .title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #f5a623;
-  }
-  
-  .searchContainer {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-  }
-  
-  .searchInput {
-    padding: 12px;
-    width: 350px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #f5a623;
-    background-color: #1e1e1e;
-    color: #fff;
-  }
-  
+  padding: 40px 20px;
+  color: #fff;
+  min-height: 100vh;
+  background: linear-gradient(to right, #1f1c2c, #928dab);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #f5a623;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.searchInput {
+  padding: 12px 20px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: inset 0 0 8px rgba(245, 166, 35, 0.2);
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  box-shadow: 0 0 10px #f5a623;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.albumGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 60px;
+  width: 100%;
+  margin-top: 20px;
+  justify-items: center;
+}
+
+.albumCard {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 320px;
+  width: 100%;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.albumCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.albumCover {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid #f5a623;
+  transition: transform 0.3s ease;
+}
+
+.albumCard:hover .albumCover {
+  transform: scale(1.03);
+}
+
+.albumInfo {
+  margin-top: 18px;
+}
+
+.albumName {
+  font-size: 1.4rem;
+  color: #fff;
+  margin: 8px 0;
+  font-weight: 600;
+}
+
+.albumArtist {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.playButton {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f5a623;
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  color: #1e1e1e;
+  font-size: 1rem;
+  border: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  font-weight: bold;
+}
+
+.albumCard:hover .playButton {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(-5px);
+  background-color: #ffc107;
+}
+
+.playButton:hover {
+  background-color: #ff9800;
+}
+
+@media (max-width: 768px) {
   .albumGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Larger album boxes */
-    gap: 100px;
-    width: 100%; /* Center the grid */
-    margin-top: 20px;
-    justify-items: center; /* Center items horizontally */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 30px;
   }
-  
-  .albumCard {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%; /* Make the card take up full width of the grid cell */
-    max-width: 350px; /* Set a max-width for the album cards */
-  }
-  
-  .albumCard:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  }
-  
+
   .albumCover {
-    width: 100%;
-    height: 250px; /* Make the album cover taller */
-    object-fit: cover;
-    border-radius: 8px;
+    height: 180px;
   }
-  
-  .albumInfo {
-    margin-top: 15px;
+
+  .title {
+    font-size: 2rem;
   }
-  
-  .albumName {
-    font-size: 1.5rem; /* Larger font size for the album name */
-    color: #fff;
-    margin: 10px 0;
+
+  .searchInput {
+    font-size: 0.9rem;
   }
-  
-  .albumArtist {
-    font-size: 1.2rem;
-    color: #bbb;
-  }
-  
-  .playButton {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #f5a623;
-    padding: 12px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #fff;
-    font-size: 1rem;
-    border: none;
-    display: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .albumCard:hover .playButton {
-    display: block;
-  }
-  
-  @media (max-width: 768px) {
-    .albumGrid {
-      grid-template-columns: 1fr 1fr; /* Two columns on small screens */
-    }
-  }
+}
+
   

@@ -1,66 +1,79 @@
-/* src/app/home/Home.module.css */
+/* Home.module.css */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .container {
-    text-align: center;
-    padding: 40px;
+  padding: 50px;
+  background-color: #121212;
+  color: #fff;
+  min-height: 100vh;
+  animation: fadeIn 0.8s ease forwards;
+  font-family: 'Poppins', 'Roboto', sans-serif;
+}
 
-  }
-  
-  .title {  /* Scoped class for h1 */
-    font-size: 3rem;
-    margin-bottom: 30px;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-  }
-  
-  .boxContainer {
-    display: grid;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .box {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    color: #fff;
-    flex: 1;
-    min-width: 1990px; /* Makes sure boxes don't get too small */
-    transition: transform 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .box h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-  
-  .box p {
-    font-size: 1.1rem;
-    color: #bbb;
-  }
-  
-  .box:hover {
-    transform: translateY(-5px);
-    background-color: rgba(255, 255, 255, 0.4);
-  }
-  
-  /* Media Queries for responsiveness */
-  @media (max-width: 768px) {
-    .boxContainer {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .box {
-      margin-bottom: 20px;
-      min-width: 100%;
-    }
-  
-    .title {
-      font-size: 2.5rem;
-    }
-  }
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.boxContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.box {
+  background-color: #1e1e1e;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #2a2a2a;
+}
+
+.box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  border-color: #1db954;
+}
+
+.box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.box h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.box p {
+  font-size: 16px;
+  color: #ccc;
+}
+
+/* Optional: Link styling if you use Link wrapper */
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
   

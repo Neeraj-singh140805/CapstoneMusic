@@ -5,7 +5,7 @@ export default function PlayerControls() {
   const { currentTrack, setCurrentTrack } = useMusic();
 
   const nextTrack = () => {
-    const next = (currentTrack + 1) % 2;  // Assuming 2 tracks in the library
+    const next = (currentTrack + 1) % 2; 
     setCurrentTrack(next);
   };
 

@@ -1,0 +1,105 @@
+.container {
+  position: relative;
+  min-height: 100vh;
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+.backgroundBlur {
+  background-size: cover;
+  background-position: center;
+  filter: blur(25px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(245, 166, 35, 0.5);
+}
+
+.albumArt {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+.trackInfo h2 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  user-select: text;
+}
+
+.trackInfo p {
+  color: #aaa;
+  margin-bottom: 30px;
+  user-select: text;
+}
+
+.progressBar {
+  height: 6px;
+  background-color: #444;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #f5a623;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.controls button:hover {
+  color: #f5a623;
+}
+
+.volume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.volume input[type="range"] {
+  width: 100px;
+  accent-color: #f5a623;
+  cursor: pointer;
+}
