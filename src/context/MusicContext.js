@@ -158,6 +158,15 @@ export function MusicProvider({ children }) {
         { title: 'Track 2', audio: '' },
       ],
     },
+              {
+      name: 'Album eighteen',
+      artist: 'Artist One',
+      cover: 'pic21 copy.jpg',
+      songs: [
+        { title: 'Track 1', audio: 'track1 copy.mp3' },
+        { title: 'Track 2', audio: '' },
+      ],
+    },
 
 
   ]);
